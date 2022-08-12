@@ -10,7 +10,7 @@ import retrofit2.http.POST
 
 interface NetworkService {
 
-    @GET("17QuestionsAboutSports/questions.json")
+    @GET("21ABeginner%E2%80%99sGuideToBetting/guidance.json")
     suspend fun getGuidanceList(): Response<GuidanceList>
 
     @POST("21ABeginner%E2%80%99sGuideToBetting/guideres.php")

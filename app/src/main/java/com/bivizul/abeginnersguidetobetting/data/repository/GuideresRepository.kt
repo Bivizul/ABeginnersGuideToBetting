@@ -23,7 +23,6 @@ class GuideresRepository @Inject constructor(private val networkService: Network
     val guideres: LiveData<Guideres> = _guideres
 
     suspend fun getGuideres(guideloc: Guideloc) {
-        Log.e("qwer","GuideresRepository getGuideres")
         withContext(Dispatchers.IO) {
             val response = networkService.getGuideres(guideloc)
             if (response.isSuccessful) {

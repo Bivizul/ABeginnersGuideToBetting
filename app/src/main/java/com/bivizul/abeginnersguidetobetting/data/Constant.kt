@@ -4,6 +4,11 @@ object Constant {
 
     const val BASE_URL = "http://65.109.10.118/"
     const val ERROR_MESSAGE = "error_message"
+    const val GUIDE_ID = "guide_id"
+    const val ONE = 1
+    const val TWO = 2
+    const val THREE = 3
+    const val FOUR = 4
 
     const val APP_PREFERENCES = "app_preferences"
     const val KEY_COUNT = "key_count"

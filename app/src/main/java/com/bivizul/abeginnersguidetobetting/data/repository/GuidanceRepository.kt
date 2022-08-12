@@ -1,5 +1,6 @@
 package com.bivizul.abeginnersguidetobetting.data.repository
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.bivizul.abeginnersguidetobetting.data.network.NetworkService
@@ -17,6 +18,7 @@ class GuidanceRepository @Inject constructor(private val networkService: Network
     suspend fun getGuidanceList() {
         withContext(Dispatchers.IO) {
             val response = networkService.getGuidanceList()
+            Log.e("qwer","getGuidanceList response: $response")
             if (response.isSuccessful) {
                 response.body()?.let {
                     _guidance.postValue(it)

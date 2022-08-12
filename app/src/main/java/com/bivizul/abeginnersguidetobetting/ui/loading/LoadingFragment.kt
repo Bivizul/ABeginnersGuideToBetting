@@ -39,7 +39,6 @@ class LoadingFragment : Fragment(R.layout.fragment_loading) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        viewModel.getGuideres(Guideloc(getGuideres(requireContext())))
         viewModel.getGuideres()
         viewModel.guideres.observe(viewLifecycleOwner) {
             CoroutineScope(Dispatchers.Main).launch {

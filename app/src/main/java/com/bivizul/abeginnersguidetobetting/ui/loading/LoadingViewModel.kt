@@ -42,7 +42,7 @@ class LoadingViewModel @Inject constructor(
             .shareIn(viewModelScope, SharingStarted.Lazily, replay = 1)*/
 
     val guideres = guideresRepository.guideres
-//
+
     fun getGuideres(){
         viewModelScope.launch {
             guideresRepository.getGuideres(guideloc)

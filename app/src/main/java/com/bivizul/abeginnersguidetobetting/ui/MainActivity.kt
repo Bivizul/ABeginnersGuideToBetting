@@ -1,25 +1,22 @@
 package com.bivizul.abeginnersguidetobetting.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.bivizul.abeginnersguidetobetting.R
 import com.bivizul.abeginnersguidetobetting.appComponent
-import com.bivizul.abeginnersguidetobetting.data.network.NetworkService
-import javax.inject.Inject
+import com.bivizul.abeginnersguidetobetting.ui.utils.checkConnect
+import com.bivizul.abeginnersguidetobetting.ui.utils.getDER
 
 
-class MainActivity : AppCompatActivity(R.layout.activity_main) {
+class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         appComponent.inject(this)
-
-//        if (!Util.checkConnect(this)){
-//            Util.getDER(this,this)
-//        } else {
-//            setContentView(R.layout.activity_main)
-//        }
-
-
+        if (!checkConnect(this)) {
+            getDER(this, this)
+        } else {
+            setContentView(R.layout.activity_main)
+        }
     }
 }
