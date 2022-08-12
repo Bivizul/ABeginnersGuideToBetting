@@ -4,5 +4,5 @@ import androidx.annotation.Keep
 
 @Keep
 data class GuidanceList(
-    val guidance: List<Guidance>
+    val guidance: List<Guidance>,
 )

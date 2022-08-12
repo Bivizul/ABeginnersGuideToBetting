@@ -7,7 +7,6 @@ import com.bivizul.abeginnersguidetobetting.ui.main.MainFragment
 import dagger.Component
 import javax.inject.Singleton
 
-// graph dependency
 @Singleton
 @Component(modules = [AppModule::class])
 interface AppComponent {
@@ -16,13 +15,5 @@ interface AppComponent {
     fun inject(loadingFragment: LoadingFragment)
     fun inject(mainFragment: MainFragment)
     fun inject(guideFragment: GuideFragment)
-
-    // можно как fun или property
-    //    fun networkService():NetworkService
-//    val networkService: NetworkService
-//
-//    fun loadingViewModel():LoadingViewModel
-//    fun mainViewModel():MainViewModel
-//    fun guideViewModel():GuideViewModel
 
 }

@@ -9,15 +9,9 @@ object Constant {
     const val TWO = 2
     const val THREE = 3
     const val FOUR = 4
-
-    const val APP_PREFERENCES = "app_preferences"
-    const val KEY_COUNT = "key_count"
-    const val KEY_SCORE = "key_score"
-    const val KEY_LIST = "key_list"
-    const val KEY_BOOL = "key_bool"
-    const val KEY_OUT_RESPONSE = "key_out_response"
-    const val DEF_OUT_RESPONSE = "def_out_response"
-
+    const val BACK_3 = "http://65.109.10.118/21ABeginner%E2%80%99sGuideToBetting/image/back_3.jpg"
+    const val KEY_WODO = "key_out_response"
+    const val DEF_WODO = "def_out_response"
     const val AF_DEV_KEY = "xxxxxxxxxxxxxxxxxxxxxx"
     const val ONESIGNAL_APP_ID = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 

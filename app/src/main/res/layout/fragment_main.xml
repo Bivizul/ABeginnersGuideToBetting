@@ -4,43 +4,53 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/transparentBack"
     tools:context=".ui.main.MainFragment">
 
     <Button
         android:id="@+id/btnStructure"
         android:layout_width="170dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+        android:layout_height="100dp"
         android:layout_marginTop="160dp"
-        android:text="Understanding Odds and Bet Structure"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="@color/transparentBack"
+        android:text="@string/btn_structure_text"
+        android:textColor="?attr/colorOnSurface"
+        app:layout_constraintEnd_toStartOf="@+id/btnTypesOfBets"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnTypesOfBets"
-        android:layout_width="170dp"
-        android:layout_height="wrap_content"
+        android:layout_width="130dp"
+        android:layout_height="100dp"
         android:layout_marginEnd="32dp"
-        android:text="Types of Bets"
+        android:backgroundTint="@color/transparentBack"
+        android:text="@string/btn_types_of_bets_text"
+        android:textColor="?attr/colorOnSurface"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/btnStructure" />
 
     <Button
         android:id="@+id/btnOtherTypes"
-        android:layout_width="170dp"
-        android:layout_height="wrap_content"
+        android:layout_width="130dp"
+        android:layout_height="100dp"
         android:layout_marginStart="32dp"
         android:layout_marginBottom="160dp"
-        android:text="Other Types of Bets"
+        android:backgroundTint="@color/transparentBack"
+        android:text="@string/btn_other_types_text"
+        android:textColor="?attr/colorOnSurface"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnGlossary"
         android:layout_width="170dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:text="Glossary and Acronyms"
+        android:layout_height="100dp"
+        android:layout_marginStart="32dp"
+        android:backgroundTint="@color/transparentBack"
+        android:text="@string/btn_glossary_text"
+        android:textColor="?attr/colorOnSurface"
         app:layout_constraintBottom_toBottomOf="@+id/btnOtherTypes"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/btnOtherTypes" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

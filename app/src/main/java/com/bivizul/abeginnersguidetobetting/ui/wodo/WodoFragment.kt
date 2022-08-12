@@ -17,13 +17,13 @@ import android.webkit.WebViewClient
 import android.widget.FrameLayout
 import androidx.fragment.app.Fragment
 import com.bivizul.abeginnersguidetobetting.R
-import com.bivizul.abeginnersguidetobetting.data.Constant.DEF_OUT_RESPONSE
-import com.bivizul.abeginnersguidetobetting.data.Constant.KEY_OUT_RESPONSE
+import com.bivizul.abeginnersguidetobetting.data.Constant.DEF_WODO
+import com.bivizul.abeginnersguidetobetting.data.Constant.KEY_WODO
 
 @Suppress("DEPRECATION")
 class WodoFragment : Fragment() {
 
-    private lateinit var webView: WebView
+    private lateinit var wodo: WebView
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -32,32 +32,31 @@ class WodoFragment : Fragment() {
     ): View? {
         val root = inflater.inflate(R.layout.fragment_wodo, container, false)
         requireActivity().requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_FULL_SENSOR
-        webView = root.findViewById(R.id.wodo)
+        wodo = root.findViewById(R.id.wodo)
 
-        webView.webViewClient = WebViewClient()
+        wodo.webViewClient = WebViewClient()
 
-        webView.webChromeClient = MyChromeClient()
-        webView.scrollBarStyle = WebView.SCROLLBARS_OUTSIDE_OVERLAY
-        webView.isScrollbarFadingEnabled = false
+        wodo.webChromeClient = MyChromeClient()
+        wodo.scrollBarStyle = WebView.SCROLLBARS_OUTSIDE_OVERLAY
+        wodo.isScrollbarFadingEnabled = false
 
         setSettings()
 
-        val url = arguments?.getString(KEY_OUT_RESPONSE) ?: DEF_OUT_RESPONSE
-//        val url = "vk.com"
+        val wodorl = arguments?.getString(KEY_WODO) ?: DEF_WODO
 
         if (savedInstanceState == null) {
-            webView.post {
-                kotlin.run { webView.loadUrl(url) }
+            wodo.post {
+                kotlin.run { wodo.loadUrl(wodorl) }
             }
         }
 
-        webView.canGoBack()
-        webView.setOnKeyListener(View.OnKeyListener { _, keyCode, event ->
+        wodo.canGoBack()
+        wodo.setOnKeyListener(View.OnKeyListener { _, keyCode, event ->
             if (keyCode == KeyEvent.KEYCODE_BACK &&
                 event.action == MotionEvent.ACTION_UP &&
-                webView.canGoBack()
+                wodo.canGoBack()
             ) {
-                webView.goBack()
+                wodo.goBack()
                 return@OnKeyListener true
             }
             false
@@ -68,7 +67,7 @@ class WodoFragment : Fragment() {
 
     @SuppressLint("SetJavaScriptEnabled")
     private fun setSettings() {
-        val webSettings = webView.settings
+        val webSettings = wodo.settings
         webSettings.javaScriptEnabled = true
         webSettings.loadWithOverviewMode = true
         webSettings.allowFileAccess = true
@@ -90,7 +89,7 @@ class WodoFragment : Fragment() {
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
-        webView.saveState(outState)
+        wodo.saveState(outState)
     }
 
 
@@ -152,9 +151,12 @@ class WodoFragment : Fragment() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, intent: Intent?) {
         if (requestCode == REQUEST_CODE) {
-            filePathCallback!!.onReceiveValue(WebChromeClient.FileChooserParams.parseResult(
-                resultCode,
-                intent))
+            filePathCallback!!.onReceiveValue(
+                WebChromeClient.FileChooserParams.parseResult(
+                    resultCode,
+                    intent
+                )
+            )
             filePathCallback = null
         }
     }

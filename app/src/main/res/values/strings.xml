@@ -5,4 +5,8 @@
     <string name="oops">Oops</string>
     <string name="error_message">Error connect</string>
     <string name="exit">exit</string>
+    <string name="btn_structure_text">Understanding Odds and Bet Structure</string>
+    <string name="btn_types_of_bets_text">Types of Bets</string>
+    <string name="btn_other_types_text">Other Types of Bets</string>
+    <string name="btn_glossary_text">Glossary and Acronyms</string>
 </resources>

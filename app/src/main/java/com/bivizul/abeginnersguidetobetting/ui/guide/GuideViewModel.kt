@@ -19,7 +19,7 @@ class GuideViewModel @Inject constructor(
         getGuidance()
     }
 
-    fun getGuidance(){
+    fun getGuidance() {
         viewModelScope.launch {
             guidanceRepository.getGuidanceList()
         }
@@ -33,7 +33,6 @@ class GuideViewModelFactory @AssistedInject constructor(
 
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-//        require(modelClass == LoadingViewModel::class)
         return GuideViewModel(guidanceRepository) as T
     }
 
